@@ -1,0 +1,19 @@
+ [{
+ 	"id": "xyejk",
+ 	"firstname": "vikas",
+ 	"lastname": "kashyap",
+ 	"avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+ 	"email": "merchant@gmail.com",
+ 	"phone": "7042037955",
+ 	"hasPremium": true,
+ 	"bids": []
+ },{
+ 	"id": "xytjk",
+ 	"firstname": "vikas",
+ 	"lastname": "kashyap",
+ 	"avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+ 	"email": "merchant@gmail.com",
+ 	"phone": "7042037955",
+ 	"hasPremium": true,
+ 	"bids": []
+ }]
