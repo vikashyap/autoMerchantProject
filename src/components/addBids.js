@@ -10,6 +10,7 @@ const AddBids = (props) => {
           <td>{items.id}</td>
           <td>{items.carTitle}</td>
           <td>{items.amount}</td>
+          <td><i onClick={props.self.openModal.bind(this,key)} className=" merchantIcon fa fa-trash fa-2x"></i></td>
          </tr>
         );
     return (
@@ -32,6 +33,7 @@ const AddBids = (props) => {
                               <th>Id</th>
                               <th>Car Title</th>  
                               <th>Amount</th>
+                              <th>Action</th>
                              </tr>
                           </thead>
                         </table>
