@@ -10,8 +10,14 @@ const BasicInfo = (props) => {
             <legend><h3>Register Merchant</h3></legend>
             <div className="formContainer">
                 <input className="inputBox" type="text" value={props.merchant.formData.firstname} onChange={props.self.handleFormChange.bind(props.self, "firstname")} name="firstname" placeholder="First Name"/>
+                {props.merchant.formData.firstname.length>0 && <i className="fa fa-check check" aria-hidden="true"></i>}
+                {props.merchant.formData.firstname.length===0 && <i className="fa fa-times close" aria-hidden="true"></i>}
                 <input className="inputBox" type="text" value={props.merchant.formData.lastname} onChange={props.self.handleFormChange.bind(props.self, "lastname")} name="lastname" placeholder="Last Name"/>	
+                {props.merchant.formData.lastname.length>0 && <i className="fa fa-check check" aria-hidden="true"></i>}
+                {props.merchant.formData.lastname.length===0 && <i className="fa fa-times close" aria-hidden="true"></i>}
                 <input className="inputBox" type="text" value={props.merchant.formData.email} onChange={props.self.handleFormChange.bind(props.self, "email")} name="email" placeholder="Email"/>
+                {props.validator.isEmail(props.self.state.formData.email) && <i className="fa fa-check check" aria-hidden="true"></i>}
+                {!props.validator.isEmail(props.self.state.formData.email) && <i className="fa fa-times close" aria-hidden="true"></i>}
                 <input className="inputBox" type="text" value={props.merchant.formData.phone} onChange={props.self.handleFormChange.bind(props.self, "phone")} name="phone" placeholder="Phone"/>
                 <div className="divPremium"> 
                 <input type="checkbox" checked={props.merchant.formData.hasPremium} value={props.merchant.formData.hasPremium} onChange={props.self.handleFormCheckChange.bind(props.self, "hasPremium")} name="hasPremium" id="hasPremium" />

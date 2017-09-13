@@ -187,6 +187,12 @@ section{
   right: 30px;
   top: 194px;
 }
+.close{
+  color: red;
+}
+.check{
+  color: white;
+}
 button {
   outline:none;
   height: 40px;
@@ -353,9 +359,9 @@ label:hover:before {
 }
 .divPremium{
     display: inline-block;
-    width: 747px;
+    width: 754px;
     text-align: left;
-    padding: 0px 26px;
+    padding: 0px 43px;
 }
 ul {
   font-family: monospace;

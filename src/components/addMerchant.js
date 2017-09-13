@@ -26,7 +26,7 @@ class AddMerchant extends Component {
       },
       bidData:{
         id:Math.random().toString(36).substring(7),
-        amount:0,
+        amount:'',
         carTitle:'',
         created:''
       }
@@ -78,6 +78,16 @@ formValidate = () =>{
     return true;
        
 }
+formBidsValidate = () =>{
+        if(validator.isEmpty(this.state.bidData.carTitle)){
+            return false;
+        }
+        if(validator.isEmpty(this.state.bidData.amount.toString())){
+           return false;
+        }
+    return true;
+       
+}
 handleFormChange = (name, value) => {
     let formData = Object.assign({}, this.state.formData);
     formData[name] = value.target.value;
@@ -107,7 +117,7 @@ addBids = ()=>{
         {!this.state.isNext?<button disabled={!this.formValidate()} onClick={this.nextStep} id="addmerchantButton">Next Step</button>:
         <Link to="/"><button id="addmerchantButton" onClick={this.nextStep}>Submit</button></Link>}</div>
         <div className="wrap">
-        {!this.state.isNext ? <BasicInfo self = {this} merchant={this.state}/>:
+        {!this.state.isNext ? <BasicInfo validator={validator} self = {this} merchant={this.state}/>:
           <AddComponentBids self = {this} merchant={this.state}/>}
 </div>
       </div>
