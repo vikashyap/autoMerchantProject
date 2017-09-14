@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadMerchants, editMerchants } from '../actions.js';
-import Styles from  '../App.css';
 import Modal from 'react-modal';
 import logo from '../logo.png';
 import { Link } from 'react-router';
+import BidsTable from './bidsTable'
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -24,12 +25,15 @@ class Merchant extends Component {
 
     this.state = {
       modalIsOpen: false,
-      isEdit:false
+      modalIsOpenHst: false,
+      isEdit:false,
+      sortedBids:[]
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModalHst.bind(this);
+    this.closeModalHst = this.closeModalHst.bind(this);
     this.removeData = this.removeData.bind(this)
   }
     openModal = (index) => {
@@ -37,13 +41,21 @@ class Merchant extends Component {
     this.setState({activeIndex: index});
   }
 
-  afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
+  closeModal = () => {
+    this.setState({modalIsOpenHst: false});
+  }
+  openModalHst = (index) => {
+    this.setState({modalIsOpenHst: true});
+     const data = this.props.merchants.data.filter(function (item) {
+                return item.id === index;
+                  });
+     this.setState({sortedBids:data})
   }
 
-  closeModal = () => {
-    this.setState({modalIsOpen: false});
+  closeModalHst = (index) => {
+    this.setState({modalIsOpenHst: false});
   }
+
   removeData = (index)=>{ 
     this.props.merchants.data.splice(this.state.activeIndex,1);
     this.closeModal();
@@ -67,13 +79,13 @@ class Merchant extends Component {
       row = merchantData.data.map((items,key) =>
          <tr key = {key}> 
          <td><img src={items.avatarUrl}className="App-logo tableLogo" alt="NA" /></td>
-          <td>{!this.state.isEdit?items.id:'a'}</td>
+          <td>{items.id}</td>
           <td>{items.firstname}</td>
           <td>{items.lastname}</td>
           <td>{items.email}</td>
           <td>{items.phone}</td>
           <td>{items.hasPremium?"Available":"NA"}</td>
-          <td>{items.bids.length}</td>
+          <td>{items.bids.length} <button onClick={this.openModalHst.bind(this,items.id)} disabled={!items.bids.length>0} title="Bids Sorted History"  className="bidHistory">Bids</button></td>
           <td><i onClick={this.openModal.bind(this,key)} className=" merchantIcon fa fa-trash fa-2x"></i>
           <Link to="/editMerchant"><i onClick={this.editMerchant.bind(this,items)} className=" merchantIcon fa fa-pencil fa-2x" aria-hidden="true"></i></Link></td>
         </tr>
@@ -118,10 +130,9 @@ class Merchant extends Component {
 </section>
 <Modal
           isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal">
+          contentLabel="Remove Merchant">
         <h1> Remove Merchant </h1>
         <div className="modalContainer">
         <img src={logo} className="App-logo" alt="logo" />
@@ -130,7 +141,20 @@ class Merchant extends Component {
         <button onClick={this.closeModal}>Cancel</button>
         </div>
         </Modal>
-       </div>                                 
+
+        <Modal
+          isOpen={this.state.modalIsOpenHst}
+          onRequestClose={this.closeModalHst}
+          style={customStyles}
+          contentLabel="Bids Sorted History">
+          <h1> Bids Sorted History </h1>
+        <div className="modalHistoryContainer">
+        <img src={logo} className="App-logo" alt="logo" />
+          {this.state.sortedBids.length>0 &&<BidsTable action={false}  data ={this.state.sortedBids[0].bids}/>}
+        <button onClick={this.closeModalHst}>Ok</button>
+        </div>
+        </Modal>
+       </div>                                  
     );
   }
 }

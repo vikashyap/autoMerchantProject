@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Header from './header';
 import { connect } from 'react-redux';
-import { loadMerchants, addMerchants, editOneMerchant } from '../actions.js';
+import {addMerchants, editOneMerchant } from '../actions.js';
 import { Link } from 'react-router';
-import { hashHistory } from 'react-router';
 import validator from 'validator';
 import BasicInfo from './basicInfo';
 import logo from '../logo.png';
@@ -43,7 +42,7 @@ class AddMerchant extends Component {
         id:Math.random().toString(36).substring(7),
         amount:'',
         carTitle:'',
-        created:''
+        created:Date()
       }
     };
     this.openModal = this.openModal.bind(this);
@@ -125,6 +124,9 @@ formBidsValidate = () =>{
 }
 handleFormChange = (name, value) => {
     let formData = Object.assign({}, this.state.formData);
+    if(name==='phone'){
+      value.target.value = value.target.value.replace(/[^\d]/,'')
+    }
     formData[name] = value.target.value;
     this.setState({ formData });
 }
@@ -135,6 +137,9 @@ handleFormCheckChange = (name, value) => {
 }
 bidFormChange = (name, value) => {
     let bidData = Object.assign({}, this.state.bidData);
+    if(name==='amount'){
+      value.target.value = value.target.value.replace(/[^\d]/,'')
+    }
     bidData[name] = value.target.value;
     this.setState({ bidData });
 }
@@ -147,7 +152,7 @@ addBids = ()=>{
         id:Math.random().toString(36).substring(7),
         amount:'',
         carTitle:'',
-        created:''
+        created:Date()
     }
     this.setState({ bidData });
     

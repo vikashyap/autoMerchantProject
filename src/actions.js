@@ -1,9 +1,5 @@
 import { serviceCall } from './service-call';
-import Store from './configureStore';
 import data  from './merchant.json'
-
-let eventsData = [];
-
 export function showLoader() {
     return {
         type: 'SHOW_LOADER_MERCHANTS',

@@ -1,9 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { loadMerchants } from '../actions.js';
-import Modal from 'react-modal';
-import logo from '../logo.png';
-import { Link } from 'react-router';
+import React from 'react';
 const BasicInfo = (props) => {
     return (
 <fieldset className="basicInfo">
@@ -18,7 +13,7 @@ const BasicInfo = (props) => {
                 <input className="inputBox" type="text" value={props.merchant.formData.email} onChange={props.self.handleFormChange.bind(props.self, "email")} name="email" placeholder="Email"/>
                 {props.validator.isEmail(props.self.state.formData.email) && <i className="fa fa-check check" aria-hidden="true"></i>}
                 {!props.validator.isEmail(props.self.state.formData.email) && <i className="fa fa-times close" aria-hidden="true"></i>}
-                <input className="inputBox" type="text" value={props.merchant.formData.phone} onChange={props.self.handleFormChange.bind(props.self, "phone")} name="phone" placeholder="Phone"/>
+                <input className="inputBox" type="text" value={props.merchant.formData.phone}  onChange={props.self.handleFormChange.bind(props.self, "phone")} name="phone" placeholder="Mobile Only Numbers"/>
                 <div className="divPremium"> 
                 <input type="checkbox" checked={props.merchant.formData.hasPremium} value={props.merchant.formData.hasPremium} onChange={props.self.handleFormCheckChange.bind(props.self, "hasPremium")} name="hasPremium" id="hasPremium" />
                 <label htmlFor="hasPremium">Is Premiuim</label>
