@@ -3,37 +3,27 @@ export default (state = {}, action) => {
         case 'LOAD_MERCHANTS': {
             const tempState = { ...state };
             tempState.loading = true;
-            if(!state.merchants){
-              tempState.merchants = action.payload
-            }
+            tempState.isEdit=false
+            tempState.merchants = action.payload
             return tempState;
         }
         case 'ADD_MERCHANTS': {
             const tempState = { ...state };
             tempState.loading = true;
-            let tempData=[];
-            if(state.merchants){
-             tempData = state.merchants.data;
-            }
-            tempData = tempData.concat(action.payload.data)
-            return {...tempState, merchants:{data:tempData}};
+            return {...tempState};
         }
-         case 'EDIT_MERCHANTS': {
+         case 'DELETE_MERCHANTS': {
             const data = action.payload.data;
-            return {...state, selectedMerchants:{data}};
+            const tempState = { ...state };
+            tempState.loading = true;
+            return tempState;
         }
-         case 'EDIT_ONE_MERCHANT': {
-            debugger
-            let tempState = {...state };
-            let mainData = tempState.merchants.data;
-            let dataArr =[action.payload.data];
-            mainData.forEach(function(type) {
-             if(type.id !== action.payload.data.id){
-                dataArr.push(type)
-             }
-             });
-            
-            return {...state,merchants:{data:dataArr},selectedMerchants:undefined};
+        case 'EDIT_MERCHANTS': {
+            const data = action.payload.data;
+            return {...state, selectedMerchants:{data},isEdit:true};
+        }
+         case 'EDIT_ONE_MERCHANT': {  
+            return {...state,selectedMerchants:false,isEdit:false};
         }
         default:
             return state;

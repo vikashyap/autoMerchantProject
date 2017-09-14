@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadMerchants, editMerchants } from '../actions.js';
+import { loadMerchants, editMerchants,deleteMerchant } from '../actions.js';
 import Modal from 'react-modal';
 import logo from '../logo.png';
 import { Link } from 'react-router';
@@ -32,17 +32,17 @@ class Merchant extends Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModalHst.bind(this);
+    this.openModalHst = this.openModalHst.bind(this);
     this.closeModalHst = this.closeModalHst.bind(this);
     this.removeData = this.removeData.bind(this)
   }
-    openModal = (index) => {
+    openModal = (id) => {
     this.setState({modalIsOpen: true});
-    this.setState({activeIndex: index});
+    this.setState({activeIndex: id});
   }
 
   closeModal = () => {
-    this.setState({modalIsOpenHst: false});
+    this.setState({modalIsOpen: false});
   }
   openModalHst = (index) => {
     this.setState({modalIsOpenHst: true});
@@ -56,9 +56,11 @@ class Merchant extends Component {
     this.setState({modalIsOpenHst: false});
   }
 
-  removeData = (index)=>{ 
-    this.props.merchants.data.splice(this.state.activeIndex,1);
+  removeData = ()=>{ 
+    //this.props.merchants.data.splice(this.state.activeIndex,1);
+    this.props.deleteMerchant(this.state.activeIndex)
     this.closeModal();
+    this.props.loadMerchants(); 
   }
   editMerchant = (item)=>{ 
     this.props.editMerchants(item);
@@ -86,7 +88,7 @@ class Merchant extends Component {
           <td>{items.phone}</td>
           <td>{items.hasPremium?"Available":"NA"}</td>
           <td>{items.bids.length} <button onClick={this.openModalHst.bind(this,items.id)} disabled={!items.bids.length>0} title="Bids Sorted History"  className="bidHistory">Bids</button></td>
-          <td><i onClick={this.openModal.bind(this,key)} className=" merchantIcon fa fa-trash fa-2x"></i>
+          <td><i onClick={this.openModal.bind(this,items.id)} className=" merchantIcon fa fa-trash fa-2x"></i>
           <Link to="/editMerchant"><i onClick={this.editMerchant.bind(this,items)} className=" merchantIcon fa fa-pencil fa-2x" aria-hidden="true"></i></Link></td>
         </tr>
         );
@@ -172,7 +174,10 @@ const mapDispatchToProps = dispatch => {
         },  
         editMerchants: (data) => {
             dispatch(editMerchants(data));
-        } 
+        },
+        deleteMerchant: (id) => {
+            dispatch(deleteMerchant(id));
+        }
     };
 };
 

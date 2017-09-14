@@ -1,5 +1,4 @@
 import { serviceCall } from './service-call';
-import data  from './merchant.json'
 export function showLoader() {
     return {
         type: 'SHOW_LOADER_MERCHANTS',
@@ -10,13 +9,32 @@ export function showLoader() {
 export function loadMerchants() {
     return {
         type: 'LOAD_MERCHANTS',
-        payload: { data:data}
+        payload: serviceCall({
+            url: "http://localhost:8080/merchants",
+            params: {
+                _format: 'json'
+            }
+        })
+    };
+}
+export function deleteMerchant(id) {
+    return {
+        type: 'DELETE_MERCHANT',
+        payload: serviceCall({
+            url: `http://localhost:8080/merchants/${id}`,
+            method: 'DELETE'
+        })
     };
 }
 export function addMerchants(data) {
+    debugger;
     return {
         type: 'ADD_MERCHANTS',
-        payload: { data:data}
+        payload: serviceCall({
+            url: "http://localhost:8080/merchants",
+            data:data,
+            method: 'POST'
+        })
     };
 }
 export function editMerchants(data) {
@@ -26,8 +44,13 @@ export function editMerchants(data) {
     };
 }
 export function editOneMerchant(data) {
+    debugger;
     return {
         type: 'EDIT_ONE_MERCHANT',
-        payload: { data:data}
+        payload: serviceCall({
+            url: `http://localhost:8080/merchants/${data.id}`,
+            data:data,
+            method: 'PUT'
+        })
     };
 }

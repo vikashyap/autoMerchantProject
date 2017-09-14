@@ -1,5 +1,6 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import reducers from './reducers';
+import ReduxPromise from 'redux-promise';
 
 const configureStore = (preloadedState) => {
   const enhancers = [];
@@ -16,7 +17,8 @@ const configureStore = (preloadedState) => {
     reducers,
     preloadedState,
     compose(
-      ...enhancers
+      ...enhancers,
+      applyMiddleware(ReduxPromise)
     )
   );
 };

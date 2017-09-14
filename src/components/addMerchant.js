@@ -75,8 +75,8 @@ nextStep =()=>{
      this.props.addMerchants(this.state.formData);
      this.setState({isClick:true})
     }
-    if(this.state.isNext && this.props.selectedMerchants){
-        this.props.editOneMerchant(this.state.formData);
+    if(this.state.isNext && this.props.isEdit){
+      this.props.editOneMerchant(this.state.formData);
     }
 
 }
@@ -189,10 +189,12 @@ addBids = ()=>{
 }
 
 const mapStateToProps = state => {
+  console.log(state)
     return {
         merchants: state.merchants,
         loading : state.loading,
-        selectedMerchants: state.selectedMerchants
+        selectedMerchants: state.selectedMerchants,
+        isEdit : state.isEdit
     };
 };
 const mapDispatchToProps = dispatch => {

@@ -1,21 +1,154 @@
- {
- 	"merchants":[{
- 	"id": "xyejk",
- 	"firstname": "vikas",
- 	"lastname": "kashyap",
- 	"avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
- 	"email": "merchant@gmail.com",
- 	"phone": "7042037955",
- 	"hasPremium": true,
- 	"bids": []
- },{
- 	"id": "xytjk",
- 	"firstname": "vikas",
- 	"lastname": "kashyap",
- 	"avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
- 	"email": "merchant@gmail.com",
- 	"phone": "7042037955",
- 	"hasPremium": true,
- 	"bids": []
- }]
+{
+  "merchants": [
+    {
+      "id": "xyejk",
+      "firstname": "vikas",
+      "lastname": "kashyap999",
+      "avatarUrl": "http://www.emoticonswallpapers.com/avatar/penguins/penguin%20pingouin%20pinguino%20101.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": [
+        {
+          "id": "1qfjb",
+          "amount": "123123121",
+          "carTitle": "klasnasn",
+          "created": "Fri Sep 15 2017 01:44:19 GMT+0530 (India Standard Time)"
+        },
+        {
+          "id": "gtj8gu",
+          "amount": "1231233",
+          "carTitle": "lasndl",
+          "created": "Fri Sep 15 2017 01:45:56 GMT+0530 (India Standard Time)"
+        }
+      ]
+    },
+    {
+      "id": "xytjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "aytjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xktjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xptjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xyjtjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xyitjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xyotjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "syjtjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "ryjtjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "fyjtjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "xyjtjk",
+      "firstname": "vikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://d3hdz4r8kacav0.cloudfront.net/images/training/User-Avatar-36.png",
+      "email": "merchant@gmail.com",
+      "phone": "7042037955",
+      "hasPremium": true,
+      "bids": []
+    },
+    {
+      "id": "mrlolz",
+      "firstname": "bikas",
+      "lastname": "kashyap",
+      "avatarUrl": "https://1001freedownloads.s3.amazonaws.com/vector/thumb/72002/1376606916.png",
+      "email": "kashyapvikas20@gmail.com",
+      "phone": "1232231312",
+      "hasPremium": true,
+      "bids": [
+        {
+          "id": "suzsv",
+          "amount": "12312312312",
+          "carTitle": "wedwer",
+          "created": "Fri Sep 15 2017 01:19:01 GMT+0530 (India Standard Time)"
+        }
+      ]
+    }
+  ]
 }

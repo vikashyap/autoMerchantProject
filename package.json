@@ -4,6 +4,7 @@
   "dependencies": {
     "@version/react-router-v3": "^1.0.0",
     "autoprefixer": "7.1.2",
+    "axios": "^0.16.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -33,6 +34,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
+    "qs": "^6.5.1",
     "react": "^15.6.1",
     "react-dev-utils": "^3.1.0",
     "react-dom": "^15.6.1",
@@ -41,6 +43,7 @@
     "react-redux": "^5.0.6",
     "react-toolbox": "^2.0.0-beta.12",
     "redux": "^3.7.2",
+    "redux-promise": "^0.5.3",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
@@ -51,10 +54,11 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js & node server.js",
+    "start": "npm run start-node & npm run start-webpack &",
+    "start-webpack": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "serve" :"node server.js"
+    "start-node": "node server.js"
   },
   "jest": {
     "collectCoverageFrom": [
