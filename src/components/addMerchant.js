@@ -163,7 +163,7 @@ addBids = ()=>{
         <Header/>
         <div>
         
-        {!this.state.isNext?<button disabled={!this.formValidate()} onClick={this.nextStep} id="addmerchantButton">Next Step</button>:
+        {!this.state.isNext?<button disabled={!this.formValidate()} className={`!this.formValidate()?'disabledClass':''`} onClick={this.nextStep} id="addmerchantButton">Next Step</button>:
         <Link to="/"><button id="addmerchantButton" onClick={this.nextStep}>Submit</button></Link>}</div>
         <div className="wrap">
         {!this.state.isNext ? <BasicInfo validator={validator} self = {this} merchant={this.state}/>:
