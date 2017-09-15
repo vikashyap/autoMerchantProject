@@ -12,14 +12,14 @@ Visit : https://nodejs.org/en/download/
 `yarn start` or `npm start`
 
 ##  STEP 3 : To run Api JSON-SERVER
-
+### Run JSON_SERVER sepratly to load your api in your application.
    `npm run serve`
-   `api server will run on http://localhost:8080/
-   `
+   
 
 ##  STEP 4 : check json server and application
  ### hit 
- `http://localhost:8080/merchants
+ `api server will run on http://localhost:8080/
+ http://localhost:8080/merchants
       http://localhost:8080/`
  
 
