@@ -13,7 +13,6 @@ export default (state = {}, action) => {
             return {...tempState};
         }
          case 'DELETE_MERCHANTS': {
-            const data = action.payload.data;
             const tempState = { ...state };
             tempState.loading = true;
             return tempState;

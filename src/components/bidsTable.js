@@ -1,6 +1,5 @@
 import React  from 'react';
 const BidsTable = (props) => {
-  console.log(props)
    const row = props.data.map((items,key) =>
           <tr key = {key}>
           <td>{items.id}</td>

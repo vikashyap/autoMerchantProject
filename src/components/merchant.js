@@ -8,19 +8,9 @@ import BidsTable from './bidsTable';
 import Pagination from './pagination';
 import MerchantTable from './merchantTable';
 import GridView from './gridView';
+import customStyles from './customStyles'
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    background            :'#25b7c4',
-    border                :'2px solid rgba(53, 88, 187, 0.45)'
-  }
-};
+
 
 class Merchant extends Component {
  constructor() {
@@ -123,7 +113,6 @@ class Merchant extends Component {
           contentLabel="Bids Sorted History">
           <h1> Bids Sorted History </h1>
         <div className="modalHistoryContainer">
-        <img src={logo} className="App-logo" alt="logo" />
           {this.state.sortedBids.length>0 &&<BidsTable action={false}  data ={this.state.sortedBids[0].bids}/>}
         <button onClick={this.closeModalHst}>Ok</button>
         </div>
@@ -133,7 +122,6 @@ class Merchant extends Component {
   }
 }
 const mapStateToProps = state => {
-    console.log(state);
     return {
         merchants: state.merchants,
         loading : state.loading

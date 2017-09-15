@@ -8,22 +8,11 @@ import BasicInfo from './basicInfo';
 import logo from '../logo.png';
 import AddComponentBids from './addBids';
 import Modal from 'react-modal';
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    background            :'#25b7c4',
-    border                :'2px solid rgba(53, 88, 187, 0.45)'
-  }
-};
+import customStyles from './customStyles'
+
 class AddMerchant extends Component {
     constructor() {
     super();
-
     this.state = {
       isNext: false,
       modalIsOpen: false,
@@ -163,13 +152,13 @@ addBids = ()=>{
         <Header/>
         <div>
         
-        {!this.state.isNext?<button disabled={!this.formValidate()} className={`!this.formValidate()?'disabledClass':''`} onClick={this.nextStep} id="addmerchantButton">Next Step</button>:
+        {!this.state.isNext?<button disabled={!this.formValidate()} className={`${!this.formValidate() ? 'disabledClass':''}`} onClick={this.nextStep} id="addmerchantButton">Next Step</button>:
         <Link to="/"><button id="addmerchantButton" onClick={this.nextStep}>Submit</button></Link>}</div>
         <div className="wrap">
         {!this.state.isNext ? <BasicInfo validator={validator} self = {this} merchant={this.state}/>:
           <AddComponentBids self = {this} merchant={this.state}/>}
 </div>
-<Modal
+      <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
@@ -189,7 +178,6 @@ addBids = ()=>{
 }
 
 const mapStateToProps = state => {
-  console.log(state)
     return {
         merchants: state.merchants,
         loading : state.loading,

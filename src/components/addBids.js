@@ -11,7 +11,7 @@ const AddBids = (props) => {
                 <input className="inputBox" type="text" value={props.merchant.bidData.amount} name="amount" onChange={props.self.bidFormChange.bind(props.self, "amount")} placeholder="Amount only numbers"/>
                 {props.merchant.bidData.amount.length>0 && <i className="fa fa-check check" aria-hidden="true"></i>}
                 {props.merchant.bidData.amount.length===0 && <i className="fa fa-times close" aria-hidden="true"></i>}
-                <button disabled={!props.self.formBidsValidate()} onClick={props.self.addBids}>Add</button>   
+                <button disabled={!props.self.formBidsValidate()}className={`${!props.self.formBidsValidate() ? 'disabledClass':''}`} onClick={props.self.addBids}>Add</button>   
                 </div>
                 <BidsTable action={true} self={props.self} data ={props.merchant.formData.bids}/>
         </fieldset>

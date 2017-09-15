@@ -1,11 +1,10 @@
 import React  from 'react';
 import { Link } from 'react-router';
 const GridView = (props) => {
- const merchantData = props.self.props.merchants.data ||{};
     const row = props.self.state.pageOfItems.map((items,key) =>
     	 <li key={key}>
 		      <div className="gridImage" style={{backgroundColor: ''}}>
-		      <img className="roundImg App-logo " src={items.avatarUrl}/>
+		      <img className="roundImg App-logo" alt="Not Available" src={items.avatarUrl}/>
 		      <div>
 			      <strong className="gridName">{items.firstname} {items.lastname}</strong>
 			   </div>
