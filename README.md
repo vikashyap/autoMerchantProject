@@ -19,9 +19,8 @@ Visit : https://nodejs.org/en/download/
 ##  STEP 4 : check json server and application
  ### hit 
  api server will run on http://localhost:8080/
-                        http://localhost:8080/merchants
                         
-                        http://localhost:3000/
+ Application will serve on http://localhost:3000/
  
 
 # Happy coding  !!!!!! :P
