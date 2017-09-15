@@ -191,6 +191,18 @@ section{
   right: 30px;
   top: 194px;
 }
+.iconTable{
+  float: right;
+  position: absolute;
+  right: 222px;
+  top: -40px;
+}
+.iconGrid{
+  float: right;
+  position: absolute;
+  right: 174px;
+  top: -40px;
+}
 .close{
   color: red;
 }
@@ -433,6 +445,98 @@ input[type=radio]:checked + label>img {
 a{
   color: white;
 }
+.disabledClass{
+ opacity: 0.5;
+}
+#pageContainer {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.page {
+    display: inline-block;
+    padding: 0px 9px;
+    margin-right: 4px;
+    border-radius: 3px;
+    border: solid 1px #c0c0c0;
+    background: #e9e9e9;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+    font-size: .875em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #717171;
+    text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+    cursor: pointer;
+}
+
+.page:hover, .page.gradient:hover {
+    background: #fefefe;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+    background: -moz-linear-gradient(0% 0% 270deg,#FEFEFE, #f0f0f0);
+}
+
+.page.active {
+    border: none;
+    background: #616161;
+    box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+    color: #f0f0f0;
+    text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+}
+.gridImage{
+  background-color: rgba(16, 16, 16, 0.36);
+  margin-left: 8px;
+  width: 200px;
+  height: 250px;
+  border-radius: 5px;
+  position: relative;
+}
+.gridIcons{
+  position: absolute;
+  bottom: 36px;
+}
+.gridName{
+  font-size:20px;
+}
+.editIcon{
+  float: left;
+  margin-left: 65px;
+  margin-top: 2px;
+}
+.deleteIcon{
+  float: right;
+  margin-right: 60px
+}
+.roundImg{
+    width: 130px;
+    height: 75px;
+}
+.gridBidsCount{
+   position: absolute;
+    bottom: -15px;
+    left: 38px;
+    border-radius: 0px;
+}
+
+.thumb-list {
+  display: block;
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 4.7em;
+  text-align: center;
+}
+
+.thumb-list li{
+  display: inline-block;
+  margin: 0;
+  padding: 0.1em 0;
+  vertical-align: top;
+}
+
+.thumb-list li div {
+  font-size: 14px;
+  width: 200px;
+}
+
 
 
 

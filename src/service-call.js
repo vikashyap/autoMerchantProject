@@ -21,20 +21,9 @@ export function serviceCall(requestData) {
             params: requestData.params,
             timeout: 95000
         };
-        debugger;
         request.headers['Content-Type'] = 'application/json';
         axios(request).then(resolve).catch(function(error) {
             console.warn('Server response error: ', error);
-            if (
-                (error.response &&
-                    error.response.status === 401 &&
-                    error.response.data &&
-                    error.response.data.errors &&
-                    error.response.data.errors.error_code === 7005) ||
-                (error.response && error.response.status === 403)
-            ) {
-                window.location.href = `${window.AMGR.CONFIG.URLS.BASE_URL}`;
-            }
             reject(error.response ? error.response : error);
         });
     });
