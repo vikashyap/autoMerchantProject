@@ -22,5 +22,7 @@ Visit : https://nodejs.org/en/download/
                         
  Application will serve on http://localhost:3000/
  
+ 
 
 # Happy coding  !!!!!! :P
+The code is written in React js and Redux modules.
